@@ -17,7 +17,7 @@ export class RepeatOpenCloseButtonComponent {
       // https://g.co/gemini/share/b581c3831922
       port = await (navigator as any).serial.requestPort({
         allowedBluetoothServiceClassIds: uuids,
-        filters: []
+        filters:[{bluetoothServiceClassId:uuids[0]}, {bluetoothServiceClassId:uuids[1]}]
       });
     } catch (e) {
       console.error('Error requesting port:', e);
